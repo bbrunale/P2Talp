@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova2Talp", "Prova2Talp\Prova2Talp.csproj", "{203EF0D7-33D5-4A54-AEFB-1CF383A77B0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova2WebForms", "Prova2WebForms\Prova2WebForms.csproj", "{A3B548DA-83A0-4164-94F8-ED72E9FCF961}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{203EF0D7-33D5-4A54-AEFB-1CF383A77B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203EF0D7-33D5-4A54-AEFB-1CF383A77B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203EF0D7-33D5-4A54-AEFB-1CF383A77B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203EF0D7-33D5-4A54-AEFB-1CF383A77B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B548DA-83A0-4164-94F8-ED72E9FCF961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B548DA-83A0-4164-94F8-ED72E9FCF961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B548DA-83A0-4164-94F8-ED72E9FCF961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B548DA-83A0-4164-94F8-ED72E9FCF961}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3058E596-9813-49D3-8CAF-EC0BFFCAC420}
+	EndGlobalSection
+EndGlobal
