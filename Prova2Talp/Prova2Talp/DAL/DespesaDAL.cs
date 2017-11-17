@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Prova2Talp.DAL
 {
-    public class DespesaDAL
+    internal class DespesaDAL
     {
         /// <summary>
         /// Insere um Despesa no sistema
@@ -25,13 +25,14 @@ namespace Prova2Talp.DAL
                     //abre o banco de dados
                     conn.Open();
                     //prepara comando para enviar ao BD
-                    var _insert = "INSERT INTO [dbo].[Produto] ([NomeDespesa],[ValorDespesa],[DescDespesa],[IdTipoDespesa]) VALUES (@nomeDespesa,@valorDespesa,@descDespesa,@idTipo";
+                    var _insert = "INSERT INTO [dbo].[Despesas] ([NomeDespesa],[ValorDespesa],[DescDespesa],[IdTipoDespesa], [DataDespesa]) VALUES (@nomeDespesa,@valorDespesa,@descDespesa,@idTipo,@dataDespesa";
                     //Utiliza o sqlCommand para enviar os dados ao banco
                     SqlCommand _command = new SqlCommand(_insert, conn);
                     _command.Parameters.AddWithValue("@nomeDespesa", dto.nomeDespesa);
                     _command.Parameters.AddWithValue("@valorDespesa", dto.valorDespesa);
                     _command.Parameters.AddWithValue("@descDespesa", dto.descDespesa);
                     _command.Parameters.AddWithValue("@idTipo", dto.idTipoDespesa);
+                    _command.Parameters.AddWithValue("@DataDespesa", dto.dataDespesa);
                     _command.ExecuteNonQuery();
 
                     return true;
@@ -61,7 +62,7 @@ namespace Prova2Talp.DAL
                     //abre o banco de dados
                     conn.Open();
                     //prepara comando para enviar ao BD
-                    var _delete = "DELETE FROM Despesa where IdDespesa = @idDespesa";
+                    var _delete = "DELETE FROM Despesas where IdDespesa = @idDespesa";
                     //Utiliza o sqlCommand para enviar os dados ao banco
                     SqlCommand _command = new SqlCommand(_delete, conn);
                     _command.Parameters.AddWithValue("@idDespesa", dto.idDespesa);
@@ -91,7 +92,7 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "SELECT (A.NomeDespesa,A.ValorDespesa,A.DescDespesa,E.NomeTipoProduto) FROM Despesa A, TipoDespesa E WHERE A.IdTipoDespesa = E.IdTipoDespesa ORDER BY A.IdDespesa";
+                    var _sql = "SELECT A.NomeDespesa, A.ValorDespesa,A.DescDespesa,e.NomeTipoDespesa , A.DataDespesa FROM Despesas AS A INNER JOIN TipoDespesa AS E ON A.IdTipoDespesa = E.IdTipoDespesa WHERE A.IdTipoDespesa = E.IdTipoDespesa ORDER BY A.IdDespesa";
                     SqlCommand command = new SqlCommand(_sql, conn);
                     command.CommandType = CommandType.Text;
 
@@ -124,7 +125,7 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "SELECT (A.NomeDespesa,A.ValorDespesa,A.DescDespesa,E.NomeTipoProduto) FROM Despesa A, TipoDespesa E WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdDespesa = @idDespesa ORDER BY A.IdDespesa";
+                    var _sql = "SELECT A.NomeDespesa, A.ValorDespesa,A.DescDespesa,e.NomeTipoDespesa , A.DataDespesa FROM Despesas AS A INNER JOIN TipoDespesa AS E ON A.IdTipoDespesa = E.IdTipoDespesa WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdDespesa = @idDespesa ORDER BY A.IdDespesa";
                     SqlCommand _command = new SqlCommand(_sql, conn);
                     _command.CommandType = CommandType.Text;
 
@@ -162,7 +163,7 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "SELECT (A.NomeDespesa,A.ValorDespesa,A.DescDespesa,E.NomeTipoProduto) FROM Despesa A, TipoDespesa E WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdTipoDespesa = @idTipo ORDER BY A.IdDespesa";
+                    var _sql = "SELECT A.NomeDespesa, A.ValorDespesa,A.DescDespesa,e.NomeTipoDespesa , A.DataDespesa FROM Despesas AS A INNER JOIN TipoDespesa AS E ON A.IdTipoDespesa = E.IdTipoDespesa WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdTipoDespesa = @idTipo ORDER BY A.IdDespesa";
                     SqlCommand _command = new SqlCommand(_sql, conn);
                     _command.CommandType = CommandType.Text;
 
@@ -188,9 +189,47 @@ namespace Prova2Talp.DAL
             }
         }
         /// <summary>
+        /// buscar Despesa a partir de um ID de Tipo de Despesa
+        /// </summary>
+        /// <param name="despesaDTO"></param>
+        /// <returns>data table com os resultados do select</returns>
+        internal DataTable buscarDespesaIdTipo(int id)
+        {
+            var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
+            using (SqlConnection conn = new SqlConnection(_stringDeConexao))
+            {
+                try
+                {
+                    conn.Open();
+                    var _sql = "SELECT A.NomeDespesa, A.ValorDespesa,A.DescDespesa,e.NomeTipoDespesa , A.DataDespesa FROM Despesas AS A INNER JOIN TipoDespesa AS E ON A.IdTipoDespesa = E.IdTipoDespesa WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdTipoDespesa = @idTipo ORDER BY A.IdDespesa";
+                    SqlCommand _command = new SqlCommand(_sql, conn);
+                    _command.CommandType = CommandType.Text;
+
+                    IDataParameter nomeParam = new SqlParameter();
+                    nomeParam.ParameterName = "@idTipo";
+                    nomeParam.Value = "%" + id + "%";
+                    nomeParam.DbType = System.Data.DbType.Int32;
+                    _command.Parameters.Add(nomeParam);
+
+                    DataSet dtSet = new DataSet();
+                    SqlDataAdapter dtAdapter = new SqlDataAdapter(_command);
+                    dtAdapter.Fill(dtSet);
+                    return dtSet.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        /// <summary>
         /// buscar Despesa a partir de uma string
         /// </summary>
-        /// <param name="ProdutoDTO"></param>
+        /// <param name="despesaDTO"></param>
         /// <returns>data table com os resultados do select</returns>
         internal DataTable buscarDespesaNome(DespesaDTO despesaDTO)
         {
@@ -200,13 +239,13 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "A.NomeDespesa,A.ValorDespesa,A.DescDespesa,E.NomeTipoProduto) FROM Despesa A, TipoDespesa E WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdTipoDespesa = @nomeDespesa ORDER BY A.IdDespesa";
+                    var _sql = "SELECT A.NomeDespesa, A.ValorDespesa,A.DescDespesa,e.NomeTipoDespesa , A.DataDespesa FROM Despesas AS A INNER JOIN TipoDespesa AS E ON A.IdTipoDespesa = E.IdTipoDespesa WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdTipoDespesa = @nomeDespesa ORDER BY A.IdDespesa";
                     SqlCommand _command = new SqlCommand(_sql, conn);
                     _command.CommandType = CommandType.Text;
 
                     IDataParameter nomeParam = new SqlParameter();
                     nomeParam.ParameterName = "@nomeTipo";
-                    nomeParam.Value = "%" + ProdutoDTO.nomeProduto + "%";
+                    nomeParam.Value = "%" + despesaDTO.nomeDespesa + "%";
                     nomeParam.DbType = System.Data.DbType.String;
                     _command.Parameters.Add(nomeParam);
 

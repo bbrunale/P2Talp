@@ -13,22 +13,13 @@ namespace Prova2WebForms {
     public partial class EstoqueMenu {
         
         /// <summary>
-        /// Controle BtnAddProd.
+        /// Controle PanelMenu.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAddProd;
-        
-        /// <summary>
-        /// Controle Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Panel PanelMenu;
         
         /// <summary>
         /// Controle BtnAltProd.
@@ -40,15 +31,6 @@ namespace Prova2WebForms {
         protected global::System.Web.UI.WebControls.Button BtnAltProd;
         
         /// <summary>
-        /// Controle BtnAddTipoProd.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAddTipoProd;
-        
-        /// <summary>
         /// Controle BtnAltTipoProd.
         /// </summary>
         /// <remarks>
@@ -56,5 +38,32 @@ namespace Prova2WebForms {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnAltTipoProd;
+        
+        /// <summary>
+        /// Controle PanelProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelProduto;
+        
+        /// <summary>
+        /// Controle PanelTipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelTipo;
+        
+        /// <summary>
+        /// Controle btnVoltar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
     }
 }

@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\Prova2Talp.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -159,16 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="AddTipoDespesa.aspx" />
-    <Content Include="AdicionaDespesa.aspx" />
-    <Content Include="AdicionaProduto.aspx" />
-    <Content Include="AddTipoProduto.aspx" />
-    <Content Include="AdicionaVenda.aspx" />
-    <Content Include="AlteraDespesa.aspx" />
-    <Content Include="AlteraProduto.aspx" />
-    <Content Include="AlteraVenda.aspx" />
-    <Content Include="AltTipoDespesa.aspx" />
-    <Content Include="AltTipoProduto.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -176,15 +167,9 @@
     <Content Include="Default.aspx" />
     <Content Include="DespesasMenu.aspx" />
     <Content Include="EstoqueMenu.aspx" />
-    <Content Include="Extrato.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="FinancasMenu.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="GerenciaDespesas.aspx" />
-    <Content Include="GerenciaProdutos.aspx" />
-    <Content Include="GerenciaVenda.aspx" />
-    <Content Include="GerTipoDespesa.aspx" />
-    <Content Include="GerTipoProduto.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -194,8 +179,6 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Lancamentos.aspx" />
-    <Content Include="RestocaProduto.aspx" />
-    <Content Include="Saldo.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -233,76 +216,6 @@
     <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTipoDespesa.aspx.cs">
-      <DependentUpon>AddTipoDespesa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddTipoDespesa.aspx.designer.cs">
-      <DependentUpon>AddTipoDespesa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdicionaDespesa.aspx.cs">
-      <DependentUpon>AdicionaDespesa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdicionaDespesa.aspx.designer.cs">
-      <DependentUpon>AdicionaDespesa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdicionaProduto.aspx.cs">
-      <DependentUpon>AdicionaProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdicionaProduto.aspx.designer.cs">
-      <DependentUpon>AdicionaProduto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddTipoProduto.aspx.cs">
-      <DependentUpon>AddTipoProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddTipoProduto.aspx.designer.cs">
-      <DependentUpon>AddTipoProduto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdicionaVenda.aspx.cs">
-      <DependentUpon>AdicionaVenda.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdicionaVenda.aspx.designer.cs">
-      <DependentUpon>AdicionaVenda.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AlteraDespesa.aspx.cs">
-      <DependentUpon>AlteraDespesa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AlteraDespesa.aspx.designer.cs">
-      <DependentUpon>AlteraDespesa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AlteraProduto.aspx.cs">
-      <DependentUpon>AlteraProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AlteraProduto.aspx.designer.cs">
-      <DependentUpon>AlteraProduto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AlteraVenda.aspx.cs">
-      <DependentUpon>AlteraVenda.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AlteraVenda.aspx.designer.cs">
-      <DependentUpon>AlteraVenda.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AltTipoDespesa.aspx.cs">
-      <DependentUpon>AltTipoDespesa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AltTipoDespesa.aspx.designer.cs">
-      <DependentUpon>AltTipoDespesa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AltTipoProduto.aspx.cs">
-      <DependentUpon>AltTipoProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AltTipoProduto.aspx.designer.cs">
-      <DependentUpon>AltTipoProduto.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -341,54 +254,12 @@
     <Compile Include="EstoqueMenu.aspx.designer.cs">
       <DependentUpon>EstoqueMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Extrato.aspx.cs">
-      <DependentUpon>Extrato.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Extrato.aspx.designer.cs">
-      <DependentUpon>Extrato.aspx</DependentUpon>
-    </Compile>
     <Compile Include="FinancasMenu.aspx.cs">
       <DependentUpon>FinancasMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FinancasMenu.aspx.designer.cs">
       <DependentUpon>FinancasMenu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GerenciaDespesas.aspx.cs">
-      <DependentUpon>GerenciaDespesas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GerenciaDespesas.aspx.designer.cs">
-      <DependentUpon>GerenciaDespesas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GerenciaProdutos.aspx.cs">
-      <DependentUpon>GerenciaProdutos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GerenciaProdutos.aspx.designer.cs">
-      <DependentUpon>GerenciaProdutos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GerenciaVenda.aspx.cs">
-      <DependentUpon>GerenciaVenda.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GerenciaVenda.aspx.designer.cs">
-      <DependentUpon>GerenciaVenda.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GerTipoDespesa.aspx.cs">
-      <DependentUpon>GerTipoDespesa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GerTipoDespesa.aspx.designer.cs">
-      <DependentUpon>GerTipoDespesa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GerTipoProduto.aspx.cs">
-      <DependentUpon>GerTipoProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GerTipoProduto.aspx.designer.cs">
-      <DependentUpon>GerTipoProduto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -401,20 +272,6 @@
       <DependentUpon>Lancamentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestocaProduto.aspx.cs">
-      <DependentUpon>RestocaProduto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RestocaProduto.aspx.designer.cs">
-      <DependentUpon>RestocaProduto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Saldo.aspx.cs">
-      <DependentUpon>Saldo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Saldo.aspx.designer.cs">
-      <DependentUpon>Saldo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +315,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prova2Talp\Prova2Talp.csproj">
+      <Project>{203ef0d7-33d5-4a54-aefb-1cf383a77b0b}</Project>
+      <Name>Prova2Talp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,14 +8,14 @@ using System.Web;
 
 namespace Prova2Talp.DAL
 {
-    public class ProdutoDAL
+    internal class ProdutoDAL
     {
         /// <summary>
         /// Insere um Produto no sistema
         /// </summary>
         /// <param name="dto"></param>
         /// <returns>true se obtiver exito, false se não</returns>
-        internal Boolean insertVenda(ProdutoDTO dto)
+        internal Boolean insertProduto(ProdutoDTO dto)
         {
 
             var _strDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"];
@@ -152,6 +152,44 @@ namespace Prova2Talp.DAL
             }
         }
         /// <summary>
+        /// buscar Produto a partir de um ID
+        /// </summary>
+        /// <param name="ProdutoDTO"></param>
+        /// <returns>data table com os resultados do select</returns>
+        internal DataTable buscarProdutoId(int id)
+        {
+            var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
+            using (SqlConnection conn = new SqlConnection(_stringDeConexao))
+            {
+                try
+                {
+                    conn.Open();
+                    var _sql = "SELECT (A.NomeProduto,A.ValorProduto,A.QtdeProduto,A.DescProduto,A.CustoProducao,E.NomeTipoProduto) FROM Produto A, TipoProduto E WHERE A.IdTipoProduto = E.IdTipoProduto AND A.IdProduto = @idProduto ORDER BY A.IdProduto";
+                    SqlCommand _command = new SqlCommand(_sql, conn);
+                    _command.CommandType = CommandType.Text;
+
+                    IDataParameter nomeParam = new SqlParameter();
+                    nomeParam.ParameterName = "@idProduto";
+                    nomeParam.Value = "%" + id + "%";
+                    nomeParam.DbType = System.Data.DbType.Int32;
+                    _command.Parameters.Add(nomeParam);
+
+                    DataSet dtSet = new DataSet();
+                    SqlDataAdapter dtAdapter = new SqlDataAdapter(_command);
+                    dtAdapter.Fill(dtSet);
+                    return dtSet.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        /// <summary>
         /// buscar Produto a partir de um ID de Tipo de Produto
         /// </summary>
         /// <param name="ProdutoDTO"></param>
@@ -171,6 +209,44 @@ namespace Prova2Talp.DAL
                     IDataParameter nomeParam = new SqlParameter();
                     nomeParam.ParameterName = "@idTipo";
                     nomeParam.Value = "%" + ProdutoDTO.idTipoProduto + "%";
+                    nomeParam.DbType = System.Data.DbType.Int32;
+                    _command.Parameters.Add(nomeParam);
+
+                    DataSet dtSet = new DataSet();
+                    SqlDataAdapter dtAdapter = new SqlDataAdapter(_command);
+                    dtAdapter.Fill(dtSet);
+                    return dtSet.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        /// <summary>
+        /// buscar Produto a partir de um ID de Tipo de Produto
+        /// </summary>
+        /// <param name="ProdutoDTO"></param>
+        /// <returns>data table com os resultados do select</returns>
+        internal DataTable buscarProdutoIdTipo(int id)
+        {
+            var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
+            using (SqlConnection conn = new SqlConnection(_stringDeConexao))
+            {
+                try
+                {
+                    conn.Open();
+                    var _sql = "SELECT (A.NomeProduto,A.ValorProduto,A.QtdeProduto,A.DescProduto, A.CustoProducao, E.NomeTipoProduto FROM Produto A, TipoProduto E WHERE A.IdTipoProduto = E.IdTipoProduto AND A.IdTipoProduto = @idTipo ORDER BY A.IdProduto";
+                    SqlCommand _command = new SqlCommand(_sql, conn);
+                    _command.CommandType = CommandType.Text;
+
+                    IDataParameter nomeParam = new SqlParameter();
+                    nomeParam.ParameterName = "@idTipo";
+                    nomeParam.Value = "%" + id + "%";
                     nomeParam.DbType = System.Data.DbType.Int32;
                     _command.Parameters.Add(nomeParam);
 

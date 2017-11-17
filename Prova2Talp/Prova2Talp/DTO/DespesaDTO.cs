@@ -12,5 +12,6 @@ namespace Prova2Talp.DTO
         public double valorDespesa { get; set; }
         public int idTipoDespesa { get; set; }
         public string descDespesa { get; set; }
+        public DateTime dataDespesa { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FinancasMenu.aspx.cs" Inherits="Prova2WebForms.FinancasMenu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Panel ID="PanelMenu" runat="server" Visible="true">
     <div class="jumbotron">
         <h1>lApices - Traçando seu rumo ao ápice</h1>
         <p class="lead">FINANÇAS</p>
@@ -7,15 +8,6 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
-            <h2>Saldo</h2>
-            <p>
-               Saldo Bancario da fabrica
-            </p>
-            <p>
-               <a href="Saldo.aspx" class="btn btn-primary btn-lg">Saber Mais &raquo;</a>
-            </p>
-        </div>
         <div class="col-md-4">
             <h2>Extrato</h2>
             <p>
@@ -35,5 +27,16 @@
             </p>
         </div>
     </div>
+    </asp:Panel>
 
+    <asp:Panel ID="PanelExtrato" runat="server" Visible="true">
+
+    </asp:Panel>
+    
+    <asp:Panel ID="PanelLancamentos" runat="server" Visible="true">
+
+    </asp:Panel>
+    <p />
+
+    <asp:Button ID="btnVoltar" runat="server" Text="Voltar" Visible ="false"/>
 </asp:Content>

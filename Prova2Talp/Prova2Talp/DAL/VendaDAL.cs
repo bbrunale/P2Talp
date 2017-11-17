@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// FALTA FUCKING INSERIR O RESULTADO NAS BUSCAS
+/// 
 /// </summary>
 namespace Prova2Talp.DAL
 {
@@ -132,6 +132,44 @@ namespace Prova2Talp.DAL
                     IDataParameter nomeParam = new SqlParameter();
                     nomeParam.ParameterName = "@idVenda";
                     nomeParam.Value = "%" + vendaDTO.idVenda + "%";
+                    nomeParam.DbType = System.Data.DbType.Int32;
+                    _command.Parameters.Add(nomeParam);
+
+                    DataSet dtSet = new DataSet();
+                    SqlDataAdapter dtAdapter = new SqlDataAdapter(_command);
+                    dtAdapter.Fill(dtSet);
+                    return dtSet.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        /// <summary>
+        /// buscar usuarios a partir de um ID
+        /// </summary>
+        /// <param name="vendaDTO"></param>
+        /// <returns>data table com os resultados do select</returns>
+        internal DataTable buscarVendaId(int id)
+        {
+            var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
+            using (SqlConnection conn = new SqlConnection(_stringDeConexao))
+            {
+                try
+                {
+                    conn.Open();
+                    var _sql = "SELECT A.IdVenda, A.DataVenda, E.NomeForma FROM Venda A, Pagamento E WHERE A.IdPagamento = E.IdForma AND A.IdVenda like @idVenda";
+                    SqlCommand _command = new SqlCommand(_sql, conn);
+                    _command.CommandType = CommandType.Text;
+
+                    IDataParameter nomeParam = new SqlParameter();
+                    nomeParam.ParameterName = "@idVenda";
+                    nomeParam.Value = "%" + id + "%";
                     nomeParam.DbType = System.Data.DbType.Int32;
                     _command.Parameters.Add(nomeParam);
 

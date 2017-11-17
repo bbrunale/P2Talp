@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Prova2Talp.DAL
 {
-    public class TipoDesepesaDAL
+    internal class TipoDespesaDAL
     {
         /// <summary>
         /// Insere um Tipo de Despesa no sistema

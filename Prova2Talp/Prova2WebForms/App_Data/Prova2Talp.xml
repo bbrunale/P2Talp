@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prova2WebForms</name>
+    </assembly>
+    <members>
+        <member name="F:Prova2WebForms.Contact.TxtNome">
+            <summary>
+            Controle TxtNome.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Contact.TxtEmail">
+            <summary>
+            Controle TxtEmail.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Contact.TxtAssunto">
+            <summary>
+            Controle TxtAssunto.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Contact.TxtCorpo">
+            <summary>
+            Controle TxtCorpo.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Contact.BtnEnviaEmail">
+            <summary>
+            Controle BtnEnviaEmail.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.PanelMenu">
+            <summary>
+            Controle PanelMenu.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.BtnAltDesp">
+            <summary>
+            Controle BtnAltDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.BtnAltTipoDesp">
+            <summary>
+            Controle BtnAltTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.PanelDespesa">
+            <summary>
+            Controle PanelDespesa.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblOpDesp">
+            <summary>
+            Controle LblOpDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.DdlOperacaoDesp">
+            <summary>
+            Controle DdlOperacaoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblTipoPesDesp">
+            <summary>
+            Controle LblTipoPesDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.DdlTipoPesDesp">
+            <summary>
+            Controle DdlTipoPesDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.BtnEnviarDesp">
+            <summary>
+            Controle BtnEnviarDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.PnlPesDesp">
+            <summary>
+            Controle PnlPesDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblIdDesp">
+            <summary>
+            Controle LblIdDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.TxtIdDesp">
+            <summary>
+            Controle TxtIdDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblNomeDesp">
+            <summary>
+            Controle LblNomeDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.TxtNomeDesp">
+            <summary>
+            Controle TxtNomeDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblDdlTipoDesp">
+            <summary>
+            Controle LblDdlTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.DdlTipoDesp">
+            <summary>
+            Controle DdlTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.PnlAddDesp">
+            <summary>
+            Controle PnlAddDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblVlrDesp">
+            <summary>
+            Controle LblVlrDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.TxtVlrDesp">
+            <summary>
+            Controle TxtVlrDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.lblDescDesp">
+            <summary>
+            Controle lblDescDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.TxtDescDesp">
+            <summary>
+            Controle TxtDescDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblDataDesp">
+            <summary>
+            Controle LblDataDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.CalDesp">
+            <summary>
+            Controle CalDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.GridDesp">
+            <summary>
+            Controle GridDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.PanelTipo">
+            <summary>
+            Controle PanelTipo.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblOpTipoDesp">
+            <summary>
+            Controle LblOpTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.DdlTipoOpTipoDesp">
+            <summary>
+            Controle DdlTipoOpTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblTipoPesTipoDesp">
+            <summary>
+            Controle LblTipoPesTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.DdlTipoPesTipoDesp">
+            <summary>
+            Controle DdlTipoPesTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.BtnEnviaTipoDesp">
+            <summary>
+            Controle BtnEnviaTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblIdTipoDesp">
+            <summary>
+            Controle LblIdTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.TxtIdTipoDesp">
+            <summary>
+            Controle TxtIdTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.LblNomeTipoDesp">
+            <summary>
+            Controle LblNomeTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.TxtNomeTipoDesp">
+            <summary>
+            Controle TxtNomeTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.GridTipoDesp">
+            <summary>
+            Controle GridTipoDesp.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.DespesasMenu.btnVoltar">
+            <summary>
+            Controle btnVoltar.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.EstoqueMenu.PanelMenu">
+            <summary>
+            Controle PanelMenu.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.EstoqueMenu.BtnAltProd">
+            <summary>
+            Controle BtnAltProd.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.EstoqueMenu.BtnAltTipoProd">
+            <summary>
+            Controle BtnAltTipoProd.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.EstoqueMenu.PanelProduto">
+            <summary>
+            Controle PanelProduto.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.EstoqueMenu.PanelTipo">
+            <summary>
+            Controle PanelTipo.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.EstoqueMenu.btnVoltar">
+            <summary>
+            Controle btnVoltar.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.FinancasMenu.PanelMenu">
+            <summary>
+            Controle PanelMenu.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.FinancasMenu.PanelExtrato">
+            <summary>
+            Controle PanelExtrato.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.FinancasMenu.PanelLancamentos">
+            <summary>
+            Controle PanelLancamentos.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.FinancasMenu.btnVoltar">
+            <summary>
+            Controle btnVoltar.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.SiteMaster.HeadContent">
+            <summary>
+            Controle HeadContent.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Para modificar, mova a declaração de campo do arquivo do designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.SiteMaster.MainContent">
+            <summary>
+            Controle MainContent.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Para modificar, mova a declaração de campo do arquivo do designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Site_Mobile.HeadContent">
+            <summary>
+            HeadContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Site_Mobile.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Site_Mobile.FeaturedContent">
+            <summary>
+            FeaturedContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.Site_Mobile.MainContent">
+            <summary>
+            MainContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.VendasMenu.PanelMenu">
+            <summary>
+            Controle PanelMenu.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.VendasMenu.BtnAddVenda">
+            <summary>
+            Controle BtnAddVenda.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.VendasMenu.BtnAltVenda">
+            <summary>
+            Controle BtnAltVenda.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.VendasMenu.PanelVenda">
+            <summary>
+            Controle PanelVenda.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.VendasMenu.PanelLista">
+            <summary>
+            Controle PanelLista.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+        <member name="F:Prova2WebForms.VendasMenu.btnVoltar">
+            <summary>
+            Controle btnVoltar.
+            </summary>
+            <remarks>
+            Campo gerado automaticamente.
+            Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+            </remarks>
+        </member>
+    </members>
+</doc>

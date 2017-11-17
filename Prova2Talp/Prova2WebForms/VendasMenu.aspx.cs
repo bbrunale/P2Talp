@@ -13,5 +13,10 @@ namespace Prova2WebForms
         {
 
         }
+
+        protected void BtnAddVenda_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

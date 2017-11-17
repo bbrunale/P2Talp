@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VendasMenu.aspx.cs" Inherits="Prova2WebForms.VendasMenu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    
+    <asp:Panel ID="PanelMenu" runat="server" Visible="true">
     <div class="jumbotron">
         <h1>lApices - Traçando seu rumo ao ápice</h1>
         <p class="lead">VENDAS</p>
@@ -13,7 +15,7 @@
                Adcione venda ao sistema
             </p>
             <p>
-                <asp:Button ID="BtnAddVenda" runat="server" Text="Adcionar" />
+                <asp:Button ID="BtnAddVenda" runat="server" Text="Adcionar" OnClick="BtnAddVenda_Click" />
             </p>
         </div>
         <div class="col-md-4">
@@ -26,4 +28,14 @@
             </p>
         </div>
     </div>
+    </asp:panel>
+    <asp:Panel ID="PanelVenda" runat="server" Visible="true">
+
+    </asp:Panel>
+    <asp:Panel ID="PanelLista" runat="server" Visible="true">
+
+    </asp:Panel>
+    <p />
+
+    <asp:Button ID="btnVoltar" runat="server" Text="Voltar" Visible ="false"/>
 </asp:Content>

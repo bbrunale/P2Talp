@@ -8,14 +8,14 @@ using System.Web;
 
 namespace Prova2Talp.DAL
 {
-    internal class TipoProdutoDAL
+    internal class ListaDAL
     {
         /// <summary>
-        /// Insere um Tipo de Produto no sistema
+        /// Insere uma lista no sistema
         /// </summary>
         /// <param name="dto"></param>
         /// <returns>true se obtiver exito, false se não</returns>
-        internal Boolean insertTipoProduto(TipoProdutoDTO dto)
+        internal Boolean insertLista(ListaDTO dto)
         {
 
             var _strDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"];
@@ -25,10 +25,13 @@ namespace Prova2Talp.DAL
                     //abre o banco de dados
                     conn.Open();
                     //prepara comando para enviar ao BD
-                    var _insert = "INSERT INTO TipoProduto (NomeTipoProduto) VALUES (@nomeTipoProduto)";
+                    var _insert = "INSERT INTO Lista (IdVenda,IdProduto,VlrHistorico,QtdeLista) VALUES (@idVenda,@idProduto,@vlrHistorico,@qtdeLista";
                     //Utiliza o sqlCommand para enviar os dados ao banco
                     SqlCommand _command = new SqlCommand(_insert, conn);
-                    _command.Parameters.AddWithValue("@nomeTipoProduto", dto.nomeTipoProduto);
+                    _command.Parameters.AddWithValue("@idVenda", dto.idVenda);
+                    _command.Parameters.AddWithValue("@idProduto", dto.idProduto);
+                    _command.Parameters.AddWithValue("@vlrHistorico", dto.vlrHistorico);
+                    _command.Parameters.AddWithValue("@qtdeLista", dto.qtdeLista);
                     _command.ExecuteNonQuery();
 
                     return true;
@@ -43,12 +46,13 @@ namespace Prova2Talp.DAL
                     conn.Close();
                 }
         }
+
         /// <summary>
-        /// Deleta um tipo de produto no sistema
+        /// Deleta listas no sistema dado uma determinada venda
         /// </summary>
         /// <param name="dto"></param>
         /// <returns>true se obtiver exito, false se não</returns>
-        internal Boolean deleteTipoProduto(TipoProdutoDTO dto)
+        internal Boolean deleteListaPorVenda(ListaDTO dto)
         {
 
             var _strDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"];
@@ -58,10 +62,10 @@ namespace Prova2Talp.DAL
                     //abre o banco de dados
                     conn.Open();
                     //prepara comando para enviar ao BD
-                    var _delete = "DELETE FROM TipoProduto where IdTipoProduto = @idTipo";
+                    var _delete = "DELETE FROM Lista where IdVenda = @idVenda";
                     //Utiliza o sqlCommand para enviar os dados ao banco
                     SqlCommand _command = new SqlCommand(_delete, conn);
-                    _command.Parameters.AddWithValue("@idTipo", dto.idTipoProduto);
+                    _command.Parameters.AddWithValue("@idVenda", dto.idVenda);
                     _command.ExecuteNonQuery();
 
                     return true;
@@ -77,10 +81,44 @@ namespace Prova2Talp.DAL
                 }
         }
         /// <summary>
-        /// Busca todos os tipos de Produto do bd
+        /// Deleta uma lista no sistema 
         /// </summary>
-        /// <returns>Data table com os tipos de Produtos encontrados</returns>
-        internal DataTable buscarTodosTipoProdutos()
+        /// <param name="dto"></param>
+        /// <returns>true se obtiver exito, false se não</returns>
+        internal Boolean deleteLista(ListaDTO dto)
+        {
+
+            var _strDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"];
+            using (SqlConnection conn = new SqlConnection(_strDeConexao.ToString()))
+                try
+                {
+                    //abre o banco de dados
+                    conn.Open();
+                    //prepara comando para enviar ao BD
+                    var _delete = "DELETE FROM Lista where IdVenda = @idVenda AND IdProduto = @idProduto";
+                    //Utiliza o sqlCommand para enviar os dados ao banco
+                    SqlCommand _command = new SqlCommand(_delete, conn);
+                    _command.Parameters.AddWithValue("@idVenda", dto.idVenda);
+                    _command.Parameters.AddWithValue("@idProduto", dto.idProduto);
+                    _command.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+        }
+        /// <summary>
+        /// Busca todas as Listas do bd
+        /// </summary>
+        /// <returns>Data table com as Despesas encontrados</returns>
+        internal DataTable buscarTodasListas()
         {
             var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
             using (SqlConnection conn = new SqlConnection(_stringDeConexao))
@@ -88,7 +126,7 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "SELECT IdTipoProduto, NomeTipoProduto FROM TipoProduto ORDER BY IdTipoProduto";
+                    var _sql = "SELECT (A.IdVenda,E.NomeProduto,A.VlrHistorico,A.QtdeLista) FROM Lista A, Produto E WHERE A.IdProduto = E.IdProduto  ORDER BY E.NomeProduto";
                     SqlCommand command = new SqlCommand(_sql, conn);
                     command.CommandType = CommandType.Text;
 
@@ -109,11 +147,11 @@ namespace Prova2Talp.DAL
             }
         }
         /// <summary>
-        /// buscar TipoProduto a partir de um ID
+        /// buscar Listas a partir de um ID de venda
         /// </summary>
-        /// <param name="TipoProdutoDTO"></param>
+        /// <param name="listaDTO"></param>
         /// <returns>data table com os resultados do select</returns>
-        internal DataTable buscarTipoProdutoId(TipoProdutoDTO TipoProdutoDTO)
+        internal DataTable buscarListaIdVenda(ListaDTO listaDTO)
         {
             var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
             using (SqlConnection conn = new SqlConnection(_stringDeConexao))
@@ -121,13 +159,13 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "SELECT IdTipoProduto, NomeTipoProduto FROM TipoProduto WHERE IdTipoProduto like @idTipo";
+                    var _sql = "SELECT (A.IdVenda,E.NomeProduto,A.VlrHistorico,A.QtdeLista) FROM Lista A, Produto E WHERE A.IdProduto = E.IdProduto AND A.idVenda = @idVenda  ORDER BY E.NomeProduto";
                     SqlCommand _command = new SqlCommand(_sql, conn);
                     _command.CommandType = CommandType.Text;
 
                     IDataParameter nomeParam = new SqlParameter();
-                    nomeParam.ParameterName = "@idTipo";
-                    nomeParam.Value = "%" + TipoProdutoDTO.idTipoProduto + "%";
+                    nomeParam.ParameterName = "@idVenda";
+                    nomeParam.Value = "%" + listaDTO.idVenda + "%";
                     nomeParam.DbType = System.Data.DbType.Int32;
                     _command.Parameters.Add(nomeParam);
 
@@ -147,11 +185,11 @@ namespace Prova2Talp.DAL
             }
         }
         /// <summary>
-        /// buscar Tipos de produto a partir de uma string
+        /// buscar Lista a partir de um ID de Produto
         /// </summary>
-        /// <param name="tipoProdutoDTO"></param>
+        /// <param name="listaDTO"></param>
         /// <returns>data table com os resultados do select</returns>
-        internal DataTable buscarTipoProdutoNome(TipoProdutoDTO tipoProdutoDTO)
+        internal DataTable buscarListaIdProduto(ListaDTO listaDTO)
         {
             var _stringDeConexao = System.Configuration.ConfigurationManager.ConnectionStrings["MinhaConexao"].ToString();
             using (SqlConnection conn = new SqlConnection(_stringDeConexao))
@@ -159,14 +197,14 @@ namespace Prova2Talp.DAL
                 try
                 {
                     conn.Open();
-                    var _sql = "SELECT IdTipoProduto, NomeTipoProduto FROM TipoProduto WHERE NomeTipoProduto like @nomeTipo ORDER BY NomeTipoProduto";
+                    var _sql = "SELECT (A.IdVenda,E.NomeProduto,A.VlrHistorico,A.QtdeLista) FROM Lista A, Produto E WHERE A.IdProduto = E.IdProduto AND A.idProduto = @idProduto  ORDER BY E.NomeProduto";
                     SqlCommand _command = new SqlCommand(_sql, conn);
                     _command.CommandType = CommandType.Text;
 
                     IDataParameter nomeParam = new SqlParameter();
-                    nomeParam.ParameterName = "@nomeTipo";
-                    nomeParam.Value = "%" + tipoProdutoDTO.nomeTipoProduto + "%";
-                    nomeParam.DbType = System.Data.DbType.String;
+                    nomeParam.ParameterName = "@idProduto";
+                    nomeParam.Value = "%" + listaDTO.idProduto + "%";
+                    nomeParam.DbType = System.Data.DbType.Int32;
                     _command.Parameters.Add(nomeParam);
 
                     DataSet dtSet = new DataSet();
