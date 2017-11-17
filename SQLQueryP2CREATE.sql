@@ -1,0 +1,1 @@
+SELECT A.NomeDespesa, A.ValorDespesa,A.DescDespesa,e.NomeTipoDespesa , A.DataDespesa FROM Despesas AS A INNER JOIN TipoDespesa AS E ON A.IdTipoDespesa = E.IdTipoDespesa WHERE A.IdTipoDespesa = E.IdTipoDespesa AND A.IdTipoDespesa = '2' ORDER BY A.IdDespesa
